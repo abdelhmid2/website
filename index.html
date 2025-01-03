@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ضيافة قسام - الحماية من التهديد الإلكتروني</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+            direction: rtl;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            background: #0c0c0c;
+            font-size: 1.3rem;
+            scroll-behavior: smooth;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .background .symbol {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 2rem;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-150vh); }
+        }
+
+        .login-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .login-form {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            font-family: 'Amiri', serif;
+            text-align: center;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5722;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            font-family: 'Amiri', serif;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #ffd54f;
+            color: #000;
+        }
+
+        .section-content {
+            padding: 2rem;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+            text-align: right;
+            border: 1px solid #ff5722;
+        }
+
+        h2 {
+            color: #ff5722;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Amiri', serif;
+            text-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+        }
+
+        p, ul {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-family: 'Amiri', serif;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Amiri', serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="background" id="background"></div>
+
+<div class="login-popup" id="loginPopup">
+    <div class="login-form">
+        <h2>يرجى إدخال كلمة المرور</h2>
+        <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
+        <button onclick="validatePassword()">دخول</button>
+    </div>
+</div>
+
+<div id="content" style="display: none;">
+    <header>
+        <h1>ضيافة قسام - الحماية من التهديد الإلكتروني</h1>
+        <p>تعرف على كيفية حماية نفسك من التهديدات الإلكترونية باستخدام خطوات عملية بسيطة.</p>
+    </header>
+<section class="section-content" id="about-hacking">
+        <h2>ما هو الاختراق</h2>
+        <p>الاختراق هو الوصول غير المصرح به إلى جهازك أو بياناتك باستخدام تقنيات أو برامج خبيثة. يهدف المخترقون عادةً إلى سرقة معلومات حساسة أو استغلال جهازك لأغراض ضارة.</p>
+    </section>
+
+    <section class="section-content" id="protect-yourself">
+        <h2>كيف تحمي نفسك</h2>
+        <ul>
+            <li>استخدام كلمات مرور قوية وطويلة.</li>
+            <li>تفعيل المصادقة الثنائية لجميع حساباتك.</li>
+            <li>تجنب فتح الروابط أو الملفات المجهولة.</li>
+            <li>تثبيت برامج مكافحة الفيروسات وتحديثها بانتظام.</li>
+            <li>استخدام خدمات VPN لتشفير اتصالك بالإنترنت.</li>
+        </ul>
+    </section>
+
+    <section class="section-content" id="best-programs">
+        <h2>أهم البرامج المجانية للحماية من الاختراق والابتزاز الإلكتروني</h2>
+        <p>إليك قائمة بأفضل البرامج المجانية التي توفر حماية فعّالة ضد الاختراقات والتهديدات الإلكترونية:</p>
+        <ul>
+            <li><strong>Malwarebytes:</strong> برنامج قوي لاكتشاف وإزالة البرمجيات الخبيثة.</li>
+            <li><strong>Avast Free Antivirus:</strong> يقدم حماية في الوقت الحقيقي مع ميزات إضافية.</li>
+            <li><strong>Bitdefender Free Edition:</strong> خفيف وسهل الاستخدام مع أداء موثوق.</li>
+            <li><strong>Kaspersky Security Cloud Free:</strong> يوفر حماية فعالة للبيانات الحساسة.</li>
+            <li><strong>ZoneAlarm Free Firewall:</strong> جدار حماية ممتاز لتأمين الشبكات.</li>
+        </ul>
+    </section>
+
+    <section class="section-content" id="handle-threats">
+        <h2>كيفية التعامل مع التهديدات الإلكترونية</h2>
+        <p>عند مواجهة تهديد إلكتروني، اتبع الخطوات التالية لتقليل المخاطر وحماية بياناتك:</p>
+        <ul>
+            <li>افصل الجهاز فورًا عن الإنترنت لتجنب تفاقم المشكلة.</li>
+            <li>قم بتغيير كلمات المرور الخاصة بك باستخدام جهاز آمن.</li>
+            <li>استخدم برنامج مكافحة الفيروسات لفحص الجهاز وإزالة التهديدات.</li>
+            <li>تواصل مع الدعم الفني أو جهة مختصة إذا استمرت المشكلة.</li>
+            <li>قم بعمل نسخ احتياطية منتظمة من بياناتك لتجنب فقدانها.</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2025 جميع الحقوق محفوظة. تصميم المهندس عبدالحميد.
+    </footer>
+</div>
+
+<script>
+    const symbols = ["{", "}", "<", ">", "/", "\\", "(", ")", "=", "+", "-", "*", "&", "@"];
+    const background = document.getElementById("background");
+
+    for (let i = 0; i < 150; i++) {
+        const symbol = document.createElement("div");
+        symbol.className = "symbol";
+        symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        symbol.style.left = Math.random() * 100 + "vw";
+        symbol.style.top = Math.random() * 100 + "vh";
+        symbol.style.animationDuration = Math.random() * 10 + 5 + "s";
+        symbol.style.animationDelay = Math.random() * 5 + "s";
+        symbol.style.fontSize = Math.random() * 2 + 1 + "rem";
+        background.appendChild(symbol);
+    }
+
+    function validatePassword() {
+        const password = document.getElementById("password").value.trim();
+        if (password === "عبدالحميد") {
+            document.getElementById("loginPopup").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        } else {
+            alert("كلمة المرور غير صحيحة!");
+        }
+    }
+</script>
+
+</body>
+</html>
